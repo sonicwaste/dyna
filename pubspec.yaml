@@ -1,0 +1,20 @@
+name: dyna
+description: A dynamic theme engine
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ">=2.15.0-268.18.beta <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  material_color_utilities: ^0.1.2
+  dynamic_color: ^0.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+flutter:
