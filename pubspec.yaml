@@ -1,7 +1,7 @@
 name: dyna
-description: A dynamic theme engine
+description: A widget that provides reactive ColorSchemes based on given source/seed color.
 version: 0.0.1
-homepage:
+homepage: https://github.com/sonicwaste/dyna
 
 environment:
   sdk: ">=2.15.0-268.18.beta <3.0.0"
