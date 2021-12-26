@@ -1,39 +1,31 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Dyna
+Dyna wraps your app to provide [ColorScheme]()s based on user wallpaper (currenly only on Android 12+) or given source color. You can plug these schemes right into your app and update your app's theme in real-time.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+https://github.com/sonicwaste/dyna/raw/main/assets/readme/video.mov
 
 ```dart
-const like = 'sample';
+Dyna(
+  builder: (context, ColorScheme light, ColorScheme dark) {
+    return MaterialApp(
+      title: 'Dyna Demo',
+      theme: AppTheme.make(light),
+      darkTheme: AppTheme.make(dark),
+    );
+  },
+);
 ```
 
-## Additional information
+```dart
+ColorPicker(
+  pickerColor: context.dyna.color ?? Colors.grey,
+  onColorChanged: (color) {
+    context.dyna.update(color);
+  },
+),
+```
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+## Priority
+
+![](./assets/readme/priority_diagram.png)
+
+Dyna will use `context.dyna.color` to generate the `ColorScheme`s. If this value is `null` (default), Dyna will try to get a `ColorScheme` from the underlying platform (e.g. wallpaper based on Android). If the platform is not supported, Dyna will then use the given default `color` (to the `Dyna` widget) to generate the `ColorScheme`s. If none is provided, Dyna will use the package default color (`kDynaDefaultColor`).
