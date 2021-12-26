@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// A default theme that makes use of the generated [ColorScheme].
 class DynaTheme {
   static ThemeData make(ColorScheme scheme) {
     final theme = ThemeData(
