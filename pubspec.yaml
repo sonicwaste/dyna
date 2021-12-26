@@ -1,6 +1,6 @@
 name: dyna
 description: A widget that provides reactive ColorSchemes based on given source/seed color.
-version: 0.0.1
+version: 0.0.1-beta.1
 homepage: https://github.com/sonicwaste/dyna
 
 environment:
