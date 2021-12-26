@@ -19,7 +19,7 @@ jobs:
       - name: Run tests
         run: flutter test
       - name: Prepare pub credentials
-        run: echo '${{ secrets.PUB_CREDENTIALS }}' > "$PUB_CACHE/credentials.json"
+        run: echo '${{ secrets.PUB_CREDENTIALS }}' > "$HOME/.config/pub-credentials.json"
       - name: Check Publish Warnings
         run: pub publish --dry-run
       - name: Publish Package
