@@ -1,5 +1,5 @@
 # Dyna
-Dyna wraps your app to provide [ColorScheme]()s based on user wallpaper (currenly only on Android 12+) or given source color. You can plug these schemes right into your app and update your app's theme in real-time.
+Dyna wraps your app to provide `ColorScheme`s based on user wallpaper (currenly only on Android 12+) or given source color. You can plug these schemes right into your app and update your app's theme in real-time.
 
 https://user-images.githubusercontent.com/2550945/147409734-d8417bef-8428-4109-a199-79ef12966aa6.mp4
 
