@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'platform/scheme_platform.dart';
 
+/// Function signature for building the children of [PlatformSchemeBuilder].
 typedef PlatformSchemeBuilderFn = Widget Function(
   BuildContext context,
   Schemes? schemes,
@@ -11,6 +12,7 @@ typedef PlatformSchemeBuilderFn = Widget Function(
 /// Builds children with light and dark [Scheme]s obtained from the underlying
 /// platform.
 class PlatformSchemeBuilder extends StatelessWidget {
+  /// Child builder.
   final PlatformSchemeBuilderFn builder;
 
   const PlatformSchemeBuilder({

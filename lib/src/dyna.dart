@@ -6,12 +6,25 @@ import 'platform_scheme_provider.dart';
 
 const kDynaDefaultColor = Colors.grey;
 
+/// Function signature for building children of [Dyna].
 typedef DynaBuilderFn = Widget Function(
   BuildContext context,
   ColorScheme light,
   ColorScheme dark,
 );
 
+/// Builds children with light and dark [ColorScheme]s.
+///
+/// Dyna will use `Dyna.of(context).color` to generate the [ColorScheme]s. If
+/// this value is null (default), Dyna will try to get a [ColorScheme] from the
+/// underlying platform (e.g. wallpaper based on Android). If the platform is
+/// not supported, Dyna will then use the given default [color] to generate the
+/// [ColorScheme]s. If none is provided, Dyna will use the package default color
+/// of ([kDynaDefaultColor]).
+///
+/// You can access the current source/seed color using `Dyna.of(context).color`.
+/// You can update it by calling `Dyna.of(context).update(color)` or
+/// `context.dyna.update(color)`.
 class Dyna extends StatelessWidget {
   final DynaBuilderFn builder;
 

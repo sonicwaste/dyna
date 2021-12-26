@@ -12,6 +12,7 @@ class DynaColorChangeNotifier extends ChangeNotifier {
 
   Color? get color => _color;
 
+  /// Update the source/seed color and rebuild dependents.
   void update(Color? color) {
     _color = color;
     notifyListeners();
