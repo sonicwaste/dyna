@@ -1,7 +1,8 @@
 import 'package:dyna/src/dyna_color.dart';
 import 'package:dyna/src/exts/material_color_exts.dart';
-import 'package:dyna/src/platform_color_scheme_provider.dart';
 import 'package:flutter/material.dart';
+
+import 'platform_scheme_provider.dart';
 
 const kDynaDefaultColor = Colors.grey;
 
@@ -45,7 +46,7 @@ class Dyna extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformColorSchemeBuilder(
+    return PlatformSchemeBuilder(
       builder: (context, platformScheme) {
         return DynaColorBuilder(
           builder: (context, dynaColor) {

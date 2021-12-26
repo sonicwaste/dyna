@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 
 import 'platform/scheme_platform.dart';
 
-typedef PlatformColorSchemeBuilderFn = Widget Function(
+typedef PlatformSchemeBuilderFn = Widget Function(
   BuildContext context,
   Schemes? schemes,
 );
 
 /// Builds children with light and dark [Scheme]s obtained from the underlying
 /// platform.
-class PlatformColorSchemeBuilder extends StatelessWidget {
-  final PlatformColorSchemeBuilderFn builder;
+class PlatformSchemeBuilder extends StatelessWidget {
+  final PlatformSchemeBuilderFn builder;
 
-  const PlatformColorSchemeBuilder({
+  const PlatformSchemeBuilder({
     Key? key,
     required this.builder,
   }) : super(key: key);
