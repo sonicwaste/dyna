@@ -20,11 +20,10 @@ jobs:
         run: flutter analyze
       - name: Run tests
         run: flutter test
-      - run: echo $XDG_CONFIG_HOME
+      - name: Create dart config directory
+        run: mkdir $XDG_CONFIG_HOME/dart
       - name: Prepare pub credentials
         run: echo '${{ secrets.PUB_CREDENTIALS }}' > "$XDG_CONFIG_HOME/dart/pub-credentials.json"
-      - name: Prepare pub credentials
-        run: echo '${{ secrets.PUB_CREDENTIALS }}' > "$HOME/.config/dart/pub-credentials.json"
       - name: Check Publish Warnings
         run: pub publish --dry-run
       - name: Publish Package
